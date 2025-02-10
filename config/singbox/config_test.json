@@ -95,7 +95,7 @@
       "includes": [],
       "healthcheck_url": "http://www.google-analytics.com/generate_204",
       "healthcheck_interval": "10m"
-    }
+    },
     {
       "tag": "红杏",
       "type": "remote",
@@ -112,7 +112,7 @@
   "filter":[
     //for里面设置为机场1，代表此条规则只对机场1起作用
     {"action":"exlude","keywords":["每次|过滤|刷新|剩余|官网|失败|到期"],"for":["掠影","牛牛","BIGMe","红杏"]}
-  ]
+  ],
   "route": {
     "rules": [
       { "protocol": [ "dns" ], "outbound": "dns-out" },
