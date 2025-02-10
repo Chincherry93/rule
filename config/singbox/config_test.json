@@ -2,8 +2,6 @@
   "log": { "disabled": false, "level": "warn", "timestamp": true },
   "dns": {
     "servers": [
-      // 不去广告，不然有些网站访问有问题
-      // { "tag": "dns_block", "address": "rcode://success" },
       { "tag": "dns_local", "address": [ "210.22.70.225", "210.22.70.3", "[2408:8026:480:112::6666]","[2400:3200::1]", "[2400:3200:baba::1]", "[2402:4e00::]" ], "detour": "🎯 全球直连" },
       { "tag": "dns_proxy", "address": [ "tls://8.8.4.4", "tls://208.67.222.2" ], "client_subnet": "114.114.114.114", "detour": "🎯 全球直连" },
       { "tag": "dns_fakeip", "address": "fakeip" }
@@ -13,7 +11,6 @@
       { "domain_suffix": [ "ghproxy.com", "jsdelivr.net", "guangbomi.com", "oaifree.com" ], "server": "dns_local" },
       { "clash_mode": "Direct", "query_type": [ "A", "AAAA" ], "server": "dns_local" },
       { "clash_mode": "Global", "query_type": [ "A", "AAAA" ], "server": "dns_proxy" },
-      // { "rule_set": [ "ads" ], "server": "dns_block", "disable_cache": true, "rewrite_ttl": 0 },
       { "rule_set": [ "proxy" ], "query_type": [ "A", "AAAA" ],"rewrite_ttl": 1, "server": "dns_fakeip"},
       { "rule_set": [ "cn" ], "query_type": [ "A", "AAAA" ], "server": "dns_local" },
       { "fallback_rules": [ { "rule_set": [ "cnip" ], "server": "dns_local" }, { "match_all": true, "server": "dns_fakeip", "rewrite_ttl": 1 } ], "server": "dns_proxy" }
