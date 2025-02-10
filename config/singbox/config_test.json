@@ -241,11 +241,13 @@
     "concurrent_dial": true
   },
   "experimental": {
-    "cache_file": { "enabled": true },
     "clash_api": {
-      "external_controller": "127.0.0.1:9999",
+      "external_controller": "0.0.0.0:9095",
+      "external_ui": "/etc/sing-box/ui",
       "secret": "",
-      "default_mode": "Rule"
+      "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_detour": "🚀 节点选择",
+      "default_mode": "rule"
     }
   }
 }
