@@ -4,7 +4,7 @@
     "servers": [
       // 不去广告，不然有些网站访问有问题
       // { "tag": "dns_block", "address": "rcode://success" },
-      { "tag": "dns_local", "address": [ "210.22.70.225", "210.22.70.3", "[2400:3200::1]", "[2400:3200:baba::1]", "[2402:4e00::]" ], "detour": "🎯 全球直连" },
+      { "tag": "dns_local", "address": [ "210.22.70.225", "210.22.70.3", "[2408:8026:480:112::6666]","[2400:3200::1]", "[2400:3200:baba::1]", "[2402:4e00::]" ], "detour": "🎯 全球直连" },
       { "tag": "dns_proxy", "address": [ "tls://8.8.4.4", "tls://208.67.222.2" ], "client_subnet": "114.114.114.114", "detour": "🎯 全球直连" },
       { "tag": "dns_fakeip", "address": "fakeip" }
     ],
@@ -62,9 +62,9 @@
   // 下面是放订阅链接，如果只用到第一个，请删除2和3
   "outbound_providers": [
     {
-      "tag": "🛫 1",
+      "tag": "掠影",
       "type": "remote",
-      "download_url": "https://1.com",
+      "download_url": "https://sub.thedvpnx.com:9443/v1/api/account/client/951897078022f0000",
       "path": "./1.yaml",
       "download_interval": "24h",
       "download_ua": "clash.meta",
@@ -73,10 +73,10 @@
       "healthcheck_interval": "10m"
     },
     {
-      "tag": "🛫 2",
+      "tag": "牛牛",
       "type": "remote",
       // "download_detour": "🌀 手动切换",
-      "download_url": "https://2.com",
+      "download_url": "http://6bsub.zhunchuanpb.com/api/v1/client/subscribe?token=1b5d329aad9dba6e9e38eda89c4e2446",
       "path": "./2.yaml",
       "download_interval": "24h",
       "download_ua": "clash.meta",
@@ -85,10 +85,22 @@
       "healthcheck_interval": "10m"
     },
     {
-      "tag": "🛫 3",
+      "tag": "BIGMe",
       "type": "remote",
       // "download_detour": "🌀 手动切换",
-      "download_url": "https://3.com",
+      "download_url": "https://ul6zrv9.bigme.online/api/v1/client/subscribe?token=46a8bb40d945af1a749d1f4bb0b1dddc",
+      "path": "./3.yaml",
+      "download_interval": "24h",
+      "download_ua": "clash.meta",
+      "includes": [],
+      "healthcheck_url": "http://www.google-analytics.com/generate_204",
+      "healthcheck_interval": "10m"
+    }
+    {
+      "tag": "红杏",
+      "type": "remote",
+      // "download_detour": "🌀 手动切换",
+      "download_url": "https://hongxingdl.com/hxvip?token=ed0aecd99af2379f92753f5b920f5c37",
       "path": "./3.yaml",
       "download_interval": "24h",
       "download_ua": "clash.meta",
@@ -97,6 +109,10 @@
       "healthcheck_interval": "10m"
     }
   ],
+  "filter":[
+    //for里面设置为机场1，代表此条规则只对机场1起作用
+    {"action":"exlude","keywords":["每次|过滤|刷新|剩余|官网|失败|到期"],"for":["掠影","牛牛","BIGMe","红杏"]}
+  ]
   "route": {
     "rules": [
       { "protocol": [ "dns" ], "outbound": "dns-out" },
